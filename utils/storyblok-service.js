@@ -40,8 +40,13 @@ class StoryblokService {
 
       // this will alter the state and replaces the current story with a current raw story object (no resolved relations or links)
       window.storyblok.on('input', (event) => {
-        if (event.story.content._uid === reactComponent.state.pageContent._uid) {
-          reactComponent.setState({pageContent: window.storyblok.addComments(event.story.content, event.story.id)})
+        if (event.story.content._uid === reactComponent.state.story.content._uid) {
+          reactComponent.setState({
+            story: {
+              ...event.story,
+              content: window.storyblok.addComments(event.story.content, event.story.id)
+            }
+          })
         }
       })
     }

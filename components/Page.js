@@ -5,7 +5,7 @@ const Page = ({content}) => (
   <SbEditable content={content}>
     <main>
       <h1 className="pb-20 text-center">PAGE</h1>
-      {content.map((blok) =>
+      {content.body.map((blok) =>
         <Component blok={blok} key={blok._uid} />
       )}
     </main>

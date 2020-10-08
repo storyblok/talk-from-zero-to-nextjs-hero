@@ -17,17 +17,17 @@ export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      pageContent: props.page.data.story.content,
+      story: props.res.data.story
     }
   }
 
   static async getInitialProps({ query }) {
     StoryblokService.setQuery(query)
 
-    let page = await StoryblokService.get('cdn/stories/home')
+    let res = await StoryblokService.get('cdn/stories/home')
 
     return {
-      page
+      res
     }
   }
 
@@ -36,12 +36,11 @@ export default class extends React.Component {
   }
 
   render() {
-    const bodyOfPage = this.state.pageContent.body
-    // const contentOfStory = this.props.story.content
+    const contentOfStory = this.state.story.content
 
     return (
       <Layout>
-        <Page content={bodyOfPage} />
+        <Page content={contentOfStory} />
       </Layout>
     )
   }
