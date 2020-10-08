@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.3",
+    "axios": "^0.20.0",
+    "next": "9.5.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "storyblok-js-client": "^3.1.0",
+    "storyblok-react": "^0.1.1"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",
