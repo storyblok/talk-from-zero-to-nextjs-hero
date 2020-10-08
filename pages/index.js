@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../components/Page'
-// import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import StoryblokService from '../utils/storyblok-service'
 
 // export async function getStaticProps(preview=true) {
@@ -40,9 +40,9 @@ export default class extends React.Component {
     // const contentOfStory = this.props.story.content
 
     return (
-      <div className='max-w-lg py-16 mx-auto'>
+      <Layout>
         <Page content={bodyOfPage} />
-      </div>
+      </Layout>
     )
   }
 }
