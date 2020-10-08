@@ -2,7 +2,12 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': 'Roboto, Arial, sans-serif',
+      'serif': 'Merriweather, Georgia, serif'
+    },
+    extend: {
+    },
   },
   variants: {},
   plugins: [],
