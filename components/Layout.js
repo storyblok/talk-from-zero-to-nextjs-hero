@@ -1,4 +1,3 @@
-import React from 'react'
 import StoryblokService from '../utils/storyblok-service'
 
 const Layout = ({ children }) => (
