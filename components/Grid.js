@@ -1,8 +1,7 @@
 import DynamicComponent from './DynamicComponent'
-import SbEditable from 'storyblok-react'
 
-const Grid = ({blok}) => (
-  <SbEditable content={blok}>
+const Grid = ({blok}) => {
+  return (
     <ul className="flex py-8 mb-6">
       {blok.columns.map((nestedBlok) => (
           <li key={nestedBlok._uid} className="flex-auto px-6">
@@ -11,7 +10,7 @@ const Grid = ({blok}) => (
         )
       )}
     </ul>
-  </SbEditable>
-)
+  )
+}
 
 export default Grid
