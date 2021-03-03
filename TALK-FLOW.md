@@ -17,7 +17,7 @@
 
 `yarn add storyblok-react storyblok-js-client axios`
 
-- show StoryblokService.js
+- show lib/storyblok.js
 - set the PREVIEW_TOKEN
   - should be set in .env
   - change real path `/`
@@ -25,12 +25,13 @@
 
 ## Create the default components & explain in Next.js
 - Page, Teaser, Grid, Feature
-- include TailwindCSS
-- DynamicComponents.js
+- include TailwindCSS in pages/_document.js
+- DynamicComponent.js
 
 ## Explain Loading Data from Storyblok using index.js
-- getInitialProps
-- StoryblokService.js
+- uncomment index.js
+- getStaticProps() in index.js
+- show lib/storyblok-hook.js
 - Load from draft
 - Save & Publish Event
 - Input Event & using state

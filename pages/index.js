@@ -65,42 +65,44 @@ export default function Home() {
 }
 
 // // Setup with Storyblok
-// import React from 'react'
+// // The Storyblok Client
+// import Storyblok from "../lib/storyblok"
+// import useStoryblok from "../lib/storyblok-hook"
 // import Page from '../components/Page'
 // import Layout from '../components/Layout'
-// import StoryblokService from '../utils/storyblok-service'
 
-// export default class extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       story: props.res.data.story
-//     }
+// export default function Home(props) {
+//   // the Storyblok hook to enable live updates
+//   const story = useStoryblok(props.story)
+
+//   return (
+//     <div>
+//       <main>
+//         { story ? <Layout><Page content={story.content} /></Layout> : null }
+//       </main>
+//     </div>
+//   )
+// }
+
+// export async function getStaticProps(context) {
+//   let slug = "home"
+//   let params = {
+//     version: "draft", // or 'published'
+//     "resolve_relations": "featured-articles.articles"
 //   }
 
-//   static async getInitialProps({ query }) {
-//     StoryblokService.setQuery(query)
-
-//     let res = await StoryblokService.get('cdn/stories/home', {
-//       "resolve_relations": "featured-articles.articles"
-//     })
-
-//     return {
-//       res
-//     }
+//   if (context.preview) {
+//     params.version = "draft"
+//     params.cv = Date.now()
 //   }
 
-//   componentDidMount() {
-//     StoryblokService.initEditor(this)
-//   }
+//   let { data } = await Storyblok.get(`cdn/stories/${slug}`, params)
 
-//   render() {
-//     const contentOfStory = this.state.story.content
-
-//     return (
-//       <Layout>
-//         <Page content={contentOfStory} />
-//       </Layout>
-//     )
+//   return {
+//     props: {
+//       story: data ? data.story : false,
+//       preview: context.preview || false
+//     },
+//     revalidate: 10,
 //   }
 // }
