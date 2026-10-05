@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> For a current Next.js + Storyblok starter, use [blueprint-core-nextjs](https://github.com/storyblok/blueprint-core-nextjs).
+
 # Talk: Going headless - from zero to Next.js hero
 
 > The live coding repo for the Next.js talk with Storyblok.
